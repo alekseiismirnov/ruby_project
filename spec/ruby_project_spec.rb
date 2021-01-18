@@ -29,4 +29,3 @@ describe 'ruby_project' do
     expect(File::exist? '.gitignore').to eq(true)
   end
 end
-
