@@ -20,3 +20,28 @@ EOF
   gitignore.close
 end
 
+def to_snake camel
+  return camel.gsub(/(.)([A-Z])/,'\1_\2').downcase
+end
+
+def class_files class_name
+  spec = File.new("spec/#{to_snake(class_name)}_spec.rb", 'w')
+  spec.syswrite <<EOF
+require '#{to_snake(class_name)}'
+require 'rspec'
+
+describe #{class_name} do
+
+end
+
+EOF
+
+  source = File.new("lib/#{to_snake(class_name)}.rb", 'w')
+  source.syswrite <<EOF
+class #{class_name}
+
+end
+
+EOF
+
+end
