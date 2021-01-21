@@ -53,7 +53,7 @@ def more? prompt
   return get.strip.downcase != 'n'
 end
 
-project_name = ARGV[1]
+project_name = ARGV[0]
 
 ruby_project project_name
 
