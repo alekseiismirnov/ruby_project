@@ -50,7 +50,7 @@ end
 
 def more? prompt
   puts prompt
-  return get.strip.downcase != 'n'
+  return gets.strip.downcase != 'n'
 end
 
 project_name = ARGV[0]
