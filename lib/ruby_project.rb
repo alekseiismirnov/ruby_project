@@ -53,13 +53,17 @@ def more? prompt
   return gets.strip.downcase != 'n'
 end
 
-project_name = ARGV[0]
+def main
+  project_name = ARGV[0]
 
-ruby_project project_name
+  puts "Creating place for #{project_name}"
+  ruby_project project_name
 
-until more? 'Wanna add some class? (Y/N)' do
-  puts 'Input class name, please'
-  class_name = gets.strip
-  class_files class_name 
+  while more? 'Wanna add some class? (Y/N)' do
+    puts 'Input class name, please'
+    class_name = gets.strip
+    class_files class_name 
+  end
 end
 
+main if ARGV[0]
