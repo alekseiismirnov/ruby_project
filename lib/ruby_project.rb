@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 ROOT_DIRECTORIES = %w{lib spec}
 
 def ruby_project project_name
@@ -45,3 +47,19 @@ end
 EOF
 
 end
+
+def more? prompt
+  puts prompt
+  return get.strip.downcase != 'n'
+end
+
+project_name = ARGV[1]
+
+ruby_project project_name
+
+until more? 'Wanna add some class? (Y/N)' do
+  puts 'Input class name, please'
+  class_name = gets.strip
+  class_files class_name 
+end
+
