@@ -24,7 +24,7 @@ EOF
   gitignore.close
   
   readme = File.new('READ.me', 'w')
-  readme.syswrite("#{project_name.split('_').map(&:capitalize).join(' ')}")
+  readme.syswrite("#{project_name.split('_').map(&:capitalize).join(' ')}\n\n")
   readme.close
 end
 
