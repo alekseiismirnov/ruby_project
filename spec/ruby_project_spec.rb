@@ -28,4 +28,10 @@ describe 'ruby_project' do
   it 'creates .gitignore' do
     expect(File::exist? '.gitignore').to eq(true)
   end
+
+  it 'creates READ.me' do
+    expect(File::exist? 'READ.me').to eq(true)
+  end
+
+
 end

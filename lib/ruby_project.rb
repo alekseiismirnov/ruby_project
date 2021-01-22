@@ -22,6 +22,10 @@ EOF
   gitignore = File.new('.gitignore', 'w')
   gitignore.syswrite('*.swp')
   gitignore.close
+  
+  readme = File.new('READ.me', 'w')
+  readme.syswrite("#{project_name.split('_').map(&:capitalize).join(' ')}")
+  readme.close
 end
 
 def to_snake camel
